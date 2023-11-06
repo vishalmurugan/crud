@@ -1,0 +1,33 @@
+<div class="container mt-5">
+<div class="d-flex justify-content-between align-items-center">
+<h2>Book List</h2>
+<a [routerLink]="['/add-book']" class="btn btn-primary btn-sm">Add Book</a>
+</div>
+<div class="row mt-3">
+    
+    <h5 *ngIf="bookList?.length ===0" class="text-center">No Book Found</h5>
+    <table *ngIf="bookList?.length !==0" class="table table-striped col-12">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Description</th>
+            <th scope="col">Year</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of bookList;let idx=index;">
+            <th scope="row">{{i?.title}}</th>
+            <td>{{i?.author}}</td>
+            <td>{{i?.description}}</td>
+            <td>{{i?.year}} </td>
+            <td>{{i?.isbn}} </td>
+            <td><button (click)="editBook(i?.isbn)" class="mx-1 btn btn-success btn-sm">EDIT</button><button (click)="deleteBook(i?.isbn)" class="btn btn-danger btn-sm">DELETE</button></td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+<div class="row justify-content-center">
+<h2 class="text-center">Add Book</h2>
+<form class="col-6 my-2 form-layout" [formGroup]="bookForm" (ngSubmit)="submitForm()">
+<div class="form-group">
+    <label >Title</label>
+    <input type="text" class="form-control my-1"  formControlName="title" name="title" placeholder="Enter the book title">
+    <app-control-messages [control]="f['title']"></app-control-messages>
+</div>
+<div class="form-group">
+    <label >Author</label>
+    <input type="text" class="form-control my-1"  formControlName="author" name="author" placeholder="Enter the book author">
+    <app-control-messages [control]="f['author']"></app-control-messages>
+</div>
+<div class="form-group">
+    <label >Description</label>
+    <textarea class="form-control my-1"  name="description" formControlName="description" placeholder="Enter the book description"></textarea>
+    <app-control-messages [control]="f['description']"></app-control-messages>
+</div>
+<div class="form-group">
+    <label >Publication Year</label>
+    <input type="text" class="form-control my-1"  name="year" formControlName="year" placeholder="Enter the Publication year">
+    <app-control-messages [control]="f['year']"></app-control-messages>
+</div>
+<div class="form-group">
+    <label >ISBN</label>
+    <input type="text" class="form-control my-1"  name="isbn" formControlName="isbn" placeholder="Enter the ISBN">
+    <app-control-messages [control]="f['isbn']"></app-control-messages>
+</div>
+<div class="form-group">
+    <input type="submit" class="btn btn-primary my-2" >
+</div>
+</form>
+</div>
+</div>
